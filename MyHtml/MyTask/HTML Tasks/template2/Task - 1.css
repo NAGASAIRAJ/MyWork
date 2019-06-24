@@ -1,0 +1,90 @@
+.sai img{
+    width: 100%
+}
+
+.raj{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+.sai{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.dkr{
+    padding-block-start: 75px;
+    text-align: center
+}
+  
+.container.row{
+    padding: 20px 0;
+}
+.row{
+    padding: 20px 0;
+}
+
+.but{
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25%;
+    input[type=text]:focus, input[type=number]:focus{
+        background-color: #ddd;
+        outline: none;
+    }
+}
+.but:hover{
+    opacity: 1;
+}
+
+.raju{
+    position: absolute;
+    top: 240%;
+    margin: 15px;
+    left: 5%;
+    color: white;
+    text-align-last: inherit;
+}
+
+input[type=text], input[type=number]{
+    width: 100%;
+    padding: 15px 23px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid 	#A9A9A9;
+}
+
+.bg-img{
+    background-image: url("img10.jpg");
+    min-height: 380px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.rajuu{
+    position: absolute;
+    top: 234%;
+    left: 16%;
+    text-align: cleft;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+.con{
+    position: absolute;
+    right: 0;
+    margin: 35px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+  }

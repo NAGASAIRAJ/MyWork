@@ -1,0 +1,21 @@
+body {
+    background: url(https://cdn.pixabay.com/photo/2016/04/15/04/02/water-1330252__340.jpg);
+    background-repeat: repeat;
+    width: 1080px;
+}
+
+div {
+    background: blue;
+    border-color: orange;
+    border-width: 4px;
+    border-style: dotted;
+}
+
+p {
+    color: brown;
+}
+
+span {
+    background: red;
+    color: black;
+}

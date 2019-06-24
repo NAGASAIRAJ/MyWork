@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://dco-assets.everestads.net/ics-campaign//5031/t/6735/8/z728x90.html -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <script src="./AMOLibrary.js" charset="utf-8"></script>
+    <style media="screen">
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      iframe {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      function loadData() {
+        var replaceMacro = function(text, data) {
+          var macros = text.match(/\!\{(.*?)\}/g);
+          if(macros) {
+            macros.forEach(function(macro){
+              var macroText = macro.split('!{').join('').split('}').join('');
+              for(var key in data) { if(key == macroText) { macroText = data[key]; } }
+              text = text.split(macro).join(macroText);
+            });
+          }
+          return text;
+        }
+        var contentD = [
+          {
+            "name": "Microsoft",
+            "product_url": "https://office.com/",
+          }
+        ];
+
+        if(contentD && contentD.length) { contentD.forEach(function(data) { amo.registerContent(data); }); }
+        // amo.registerVariation("layout", "Night");
+        // amo.registerVariation("layout", "HUP");
+        amo.registerVariation("layout", "Renewal");
+        amo.registerVariation("headline1", "['<#505050>Renew your <#D83B01>Office 365 <#505050> |subscription today','17.5px',337,5,'19','350', 'left']");
+        amo.registerVariation("headline2", "['<#505050>Keep your digital assets protected |with Outlook + 50 GB mailbox','12.5px',337,45,'14','350', 'left']");
+        amo.registerVariation("headline3", "['<#505050> ','10.5px',16,122,'12','350', 'left']");
+        amo.registerVariation("headline4", "['<#505050>Offer valid to employees of eligible companies only','9px',337,75,'12','350', 'left']");
+        // amo.registerVariation("headline1", "['<#505050>Keep your digital assets protected','17.5px',337,23,'19','350', 'left']");
+        // amo.registerVariation("headline2", "['<#505050>Renew your <#D83B01>Office 365 <#505050>subscription today','12.5px',337,47,'14','350', 'left']");
+        // amo.registerVariation("costline3", "Starting at");
+        // amo.registerVariation("costline1", "$12.50");
+        // amo.registerVariation("costline2", "user/mo.");
+        amo.registerVariation("ctaText", "ACHETER MAINTENANT");//BUY NOW
+        // amo.registerVariation("ctaArrowVisibleFlag", "!{passthroughfield2}");
+        amo.registerVariation("impressionTracker", "../../../../1x1.png?impressionTracker=" + Math.random());
+        amo.registerVariation("clickTracker", "../../../../1x1.png?clickTracker=" + Math.random());
+        amo.registerVariation("clickURL", "!{product_url}");
+        var content = [], cam = {};
+        var cam = {
+          layout: amo.variation['layout'],
+          headline1: amo.variation['headline1'],
+          headline2: amo.variation['headline2'],
+          headline3: amo.variation['headline3'],
+          headline4: amo.variation['headline4'],
+          // costline3: amo.variation['costline3'],
+          // costline1: amo.variation['costline1'],
+          // costline2: amo.variation['costline2'],
+          cta: amo.variation['ctaText'],
+          // ctaArrowVisibleFlag: amo.variation['ctaArrowVisibleFlag'],
+          impressionTracker: amo.variation['impressionTracker'],
+          clickTracker: amo.variation['clickTracker'],
+          url: amo.variation['clickURL']
+        };
+        if(amo.content && amo.content.length) {
+          amo.content.forEach(function(data) {
+            content.push({
+              feedData: data,
+              layout: cam.layout,
+              headline1: cam.headline1,
+              headline2: cam.headline2,
+              headline3: cam.headline3,
+              headline4: cam.headline4,
+              // costline3: cam.costline3,
+              // costline1: cam.costline1,
+              // costline2: cam.costline2,
+              ctaText: cam.cta,
+              // ctaArrowVisibleFlag: cam.ctaArrowVisibleFlag.toString().toLowerCase() == 'false' ? false : true,
+              ctaArrowVisibleFlag: true,
+              impressionTracker: cam.impressionTracker,
+              clickTracker: cam.clickTracker,
+              url: cam.url
+            });
+          });
+          if(content && content.length) {
+            content.map(function(data){
+              for(var key in data) { data[key] = typeof data[key] == 'string' ? replaceMacro(data[key], data.feedData) : data[key]; }
+            });
+          }
+        }
+        window.adData = content[0], window.adClickUrl = adData.url;
+        // document.querySelector('iframe').addEventListener("click", exitHandler.bind(this));
+        // function exitHandler() {
+        //   // window.open(clickTag);
+        //   amo.onDynAdClick(adData.feedData, "CLICK", adClickUrl);
+        // }
+        var headline1 = adData.headline1 && adData.headline1.toLowerCase() != 'na' ? adData.headline1 : ' ';
+        var headline2 = adData.headline2 && adData.headline2.toLowerCase() != 'na' ? adData.headline2 : ' ';
+        var headline3 = adData.headline3 && adData.headline3.toLowerCase() != 'na' ? adData.headline3 : ' ';
+        var headline4 = adData.headline4 && adData.headline4.toLowerCase() != 'na' ? adData.headline4 : ' ';
+        // var costline3 = adData.costline3 && adData.costline3.toLowerCase() != 'na' ? adData.costline3 : '';
+        // var costline1 = adData.costline1 && adData.costline1.toLowerCase() != 'na' ? adData.costline1 : '';
+        // var costline2 = adData.costline2 && adData.costline2.toLowerCase() != 'na' ? adData.costline2 : '';
+        var ctaText = adData.ctaText && adData.ctaText.toLowerCase() != 'na' ? adData.ctaText : '';
+        var impressionTracker = adData.impressionTracker;
+        var clickTracker = adData.clickTracker;
+        var adUrl = '';
+        switch(adData.layout){
+          case 'Beach' : adURL = 'Beach/Office365Home_ModernHUPBeach_USA_728x90_DCO_1TB_Access_NA_NA_ANI_LEA_NA_1.htm';break;
+          case 'Day' : adURL = 'Day/Office365Home_ModernHUPHomeF_USA_728x90_DCO_1TB_Access_NA_NA_ANI_LEA_NA_1.htm';break;
+          case 'Night' : adURL = 'Night/O365_AccessYourWorld_USA_728x90_BAN_1TBCloud_Access_NA_NA_ANI_BN_T1_1.htm';break;
+          case 'Renewal' : adURL = 'Renewal/Office365Home_ModernHUPCouchFAM_USA_728x90_DCO_1TB_Access_NA_NA_ANI_LEA_NA_1.htm';break;
+          case 'HUP' : adURL = 'HUP/Office365Home_ModernHUPHomeM_USA_728x90_DCO_1TB_Access_NA_NA_ANI_LEA_NA_1.htm';break;
+        }
+        var iframe = document.createElement('iframe');
+        iframe.src = adURL;
+        iframe.width = '728';
+        iframe.height = '90';
+        document.body.appendChild(iframe);
+        var bannerData = {
+          headline1: headline1,
+          headline2: headline2,
+          headline3: headline3,
+          headline4: headline4,
+          // costline3: costline3,
+          // costline1: costline1,
+          // costline2: costline2,
+          ctaText: ctaText,
+          CTAarrowVisible: [adData.ctaArrowVisibleFlag, 0,0],
+          impressionTracker: impressionTracker,
+          clickTracker: clickTracker,
+        };
+        window.getBannerData = function(){ var obj = {}; for(var i in bannerData) { obj[i] = bannerData[i]; } return obj; }
+      }
+      loadData();
+    </script><iframe src="./O365_AccessYourWorld_USA_728x90_BAN_1TBCloud_Access_NA_NA_ANI_BN_T1_1.html" width="728" height="90"></iframe>
+  
+
+</body></html>
